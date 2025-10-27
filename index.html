@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gerenciador de Funcionários</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Gerenciador de Funcionários</h1>
+  <div id="msg" class="message" aria-live="polite" aria-atomic="true" style="display:none"></div>
+
+    <section class="form-section">
+      <form id="employee-form">
+        <input type="hidden" id="employee-id">
+        <div class="row">
+          <label>Nome</label>
+          <input id="name" required>
+        </div>
+        <div class="row">
+          <label>CPF</label>
+          <input id="cpf" required minlength="11" maxlength="11">
+        </div>
+        <div class="row">
+          <label>Data de Nascimento</label>
+          <input id="birth" type="date" required min="1900-01-01" max="2025-12-31">
+        </div>
+        <div class="row">
+          <label>Cargo</label>
+          <input id="role" required>
+        </div>
+        <div class="row">
+          <label>Salário</label>
+          <input id="salary" type="number" step="0.01" min="0" max="9999999" required>
+        </div>
+        <div class="actions">
+          <button type="submit" id="save">Salvar</button>
+          <!-- Botão Limpar removido -->
+          <button type="button" id="report">Gerar Relatório (stream)</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="table-section">
+      <h2>Lista de Funcionários</h2>
+      <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+        <input id="search" placeholder="Pesquisar por nome, CPF ou cargo" style="flex:1">
+        <button type="button" id="refresh">Atualizar Lista</button>
+      </div>
+      <table id="employees-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Data Nasc.</th>
+            <th>Cargo</th>
+            <th>Salário</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <template id="row-template">
+    <tr>
+      <td class="t-name"></td>
+      <td class="t-cpf"></td>
+      <td class="t-birth"></td>
+      <td class="t-role"></td>
+      <td class="t-salary"></td>
+      <td class="t-actions">
+        <button class="edit">Editar</button>
+        <button class="delete">Excluir</button>
+      </td>
+    </tr>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

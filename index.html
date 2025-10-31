@@ -3,12 +3,12 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Gerenciador de Funcion├írios</title>
+	<title>Gerenciador de Funcionários</title>
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 	<main>
-		<h1>Gerenciador de Funcion├írios</h1>
+		<h1>Gerenciador de Funcionários</h1>
 		<div id="msg" class="message" aria-live="polite" aria-atomic="true" style="display:none"></div>
 
 		<section class="form-section">
@@ -27,18 +27,18 @@
 					<input id="role" required>
 				</div>
 				<div class="row">
-					<label>Sal├írio</label>
+					<label>Salário</label>
 					<input id="salary" type="number" step="0.01" min="0" required>
 				</div>
 				<div class="actions">
 					<button type="submit" id="save">Cadastrar</button>
-					<button type="button" id="report">Gerar Relat├│rio (CSV)</button>
+					<button type="button" id="report">Gerar Relatório (CSV)</button>
 				</div>
 			</form>
 		</section>
 
 		<section class="table-section">
-			<h2>Lista de Funcion├írios</h2>
+			<h2>Lista de Funcionários</h2>
 			<div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
 				<input id="search" placeholder="Pesquisar por nome, cargo" style="flex:1">
 				<button type="button" id="refresh">Atualizar Lista</button>
@@ -49,8 +49,8 @@
 						<th>Nome</th>
 						<th>Idade</th>
 						<th>Cargo</th>
-						<th>Sal├írio</th>
-						<th>A├º├Áes</th>
+						<th>Salário</th>
+						<th>Ações</th>
 					</tr>
 				</thead>
 				<tbody></tbody>
@@ -58,7 +58,7 @@
 		</section>
 
 		<section class="reports">
-			<button id="report-summary" type="button">Relat├│rio (Resumo)</button>
+			<button id="report-summary" type="button">Relatório (Resumo)</button>
 		</section>
 	</main>
 
